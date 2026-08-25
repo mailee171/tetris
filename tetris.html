@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Tetris</title>
+    <link rel="stylesheet" href="tetris.css">
+</head>
+
+<body>
+    <div class="game-container">
+        <header>
+            <h1>TETRIS</h1>
+        </header>
+
+        <main class="game-layout">
+            <!-- Left Side: Next Block Preview -->
+            <aside class="side-panel left-panel">
+                <div class="panel-card">
+                    <h2>NEXT</h2>
+                    <canvas id="nextCanvas" width="120" height="120"></canvas>
+                </div>
+            </aside>
+
+            <!-- Center: Main Game Board -->
+            <section class="board-container">
+                <canvas id="gameCanvas" width="300" height="600"></canvas>
+            </section>
+
+            <!-- Right Side: Score & Controls -->
+            <aside class="side-panel right-panel">
+                <div class="panel-card score-card">
+                    <h2>SCORE</h2>
+                    <div id="score">0</div>
+                </div>
+
+                <div class="controls-panel panel-card">
+                    <button id="startBtn" class="btn primary-btn">시작</button>
+                    <button id="pauseBtn" class="btn secondary-btn" disabled>멈춤</button>
+                    <button id="restartBtn" class="btn danger-btn">재시작</button>
+                </div>
+
+                <div class="instructions panel-card">
+                    <h3>CONTROLS</h3>
+                    <ul>
+                        <li><span class="key">←</span> <span class="key">→</span> : Move</li>
+                        <li><span class="key">↑</span> : Rotate</li>
+                        <li><span class="key">↓</span> : Soft Drop</li>
+                    </ul>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <!-- Modal for Game Over -->
+    <div id="gameOverModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>GAME OVER</h2>
+            <p>Final Score: <span id="finalScore">0</span></p>
+            <button id="modalRestartBtn" class="btn primary-btn">다시 시작</button>
+        </div>
+    </div>
+
+    <script src="tetris.js"></script>
+</body>
+
+</html>
